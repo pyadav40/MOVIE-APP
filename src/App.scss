@@ -1,0 +1,34 @@
+$primary-color: #01010f;
+
+$olive-green: #09b041;
+$orange: #7c5800;
+
+@font-face {
+  font-family: "oswald";
+  src: local("oswald"),
+    url("./assets/font/Oswald-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
+  background-color: $primary-color !important;
+}
+
+.wrapper {
+  position: relative;
+  font-family: "oswald";
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 2.5rem;
+  background-size: cover;
+}

@@ -1,0 +1,79 @@
+$primary-color: #2c302e;
+$olive-green: #09b041;
+$orange: #7c5800;
+$font-size-icon: 1.8rem;
+
+.card-container {
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  position: relative;
+  width: 220px;
+  height: 300px;
+  display: inline-block;
+  margin: 0.8rem;
+  // background-image: url("https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg");
+  background-size: cover;
+  transition: visibility 0.8s ease-in;
+  &:hover .heart-icon {
+    visibility: visible;
+  }
+  .rat-heart {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 111;
+  }
+  .rating {
+    padding: 5px;
+    width: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid $olive-green;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.8rem !important;
+    background-color: $primary-color;
+
+    color: white;
+  }
+  .heart-icon {
+    visibility: hidden;
+    font-size: $font-size-icon;
+    color: #ff0d5d;
+  }
+  .container_detail {
+    border-radius: 0px 0px 20px 20px;
+    text-align: center;
+    padding: 0px 10px;
+    cursor: pointer;
+    width: 91%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 30px;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    color: white;
+    background-color: hsla(254, 12%, 13%, 0.9);
+    transition: max-height 0.3s ease-in-out;
+    p {
+      margin-top: 2px;
+      font-size: 0.8rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    &:hover {
+      max-height: 100px;
+    }
+  }
+}

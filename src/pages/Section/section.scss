@@ -1,0 +1,47 @@
+$primary-color: #2c302e;
+$olive-green: #09b041;
+$orange: #7c5800;
+$font-size-icon: 1.8rem;
+$marginValue: 50px;
+
+.section1 {
+  width: 90vw;
+  height: auto;
+  color: white;
+  font-size: $font-size-icon;
+  margin-bottom: 2rem;
+  .card-wrapper {
+    margin-top: 4rem;
+    width: 100%;
+    max-height: 80%;
+    display: inline-block;
+  }
+  h1 {
+    display: inline;
+    margin-right: 1rem;
+    font-size: $font-size-icon;
+  }
+  .heading {
+    margin-top: 3rem;
+    max-height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .box-one {
+      width: 30%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 0.8rem a {
+        text-decoration: none;
+        font-size: $font-size-icon;
+        color: white;
+        margin-right: 1rem;
+      }
+    }
+    .right {
+      display: flex;
+      justify-content: end !important;
+    }
+  }
+}

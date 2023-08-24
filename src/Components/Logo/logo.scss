@@ -1,0 +1,27 @@
+$primary-color: #2c302e;
+$olive-green: #09b041;
+$pink: #f81c36;
+$font-size-icon: 1.8rem;
+
+.footer-logo {
+  width: 200px;
+  height: 50px;
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: white;
+  .letter {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $pink;
+  }
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+}
