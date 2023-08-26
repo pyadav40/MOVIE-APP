@@ -4,9 +4,9 @@ $olive-green: #09b041;
 $orange: #7c5800;
 
 @font-face {
-  font-family: "oswald";
-  src: local("oswald"),
-    url("./assets/font/Oswald-Regular.ttf") format("truetype");
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("./assets/font/Poppins-Medium.ttf") format("truetype");
 }
 
 * {
@@ -26,9 +26,8 @@ body {
 
 .wrapper {
   position: relative;
-  font-family: "oswald";
+  font-family: "Poppins";
   max-width: 100vw;
-  max-height: 100vh;
+  height: auto;
   padding: 2.5rem;
-  background-size: cover;
 }

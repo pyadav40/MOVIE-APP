@@ -2,8 +2,19 @@ $primary-color: #2c302e;
 $olive-green: #09b041;
 $orange: #7c5800;
 $font-size-icon: 1.8rem;
-$marginValue: 50px;
+$marginValue: 150px;
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-height: 100vh;
+  z-index: -55555;
+  object-fit: cover;
+  opacity: 0.5;
+}
 .home-banner {
+  z-index: 1111;
   width: 100%;
   height: calc(100vh - #{$marginValue});
   display: flex;
@@ -26,7 +37,7 @@ $marginValue: 50px;
     margin-bottom: 1rem;
   }
   p {
-    margin-top: 1.8rem;
+    margin-top: 1rem;
     font-size: 1rem;
   }
 
@@ -36,11 +47,12 @@ $marginValue: 50px;
     width: 250px;
     height: 100px;
     margin: 2rem 0rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     justify-content: center;
     align-items: center;
     border: 2px solid #19a40e;
+    border-radius: 1.5rem;
     transition: all 0.3s ease-in-out;
     &:hover {
       background-color: #19a40e;

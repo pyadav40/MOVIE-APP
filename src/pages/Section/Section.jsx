@@ -5,12 +5,17 @@ import { sliceArray } from "../../utility/sliceArray";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import "./section.scss";
+import { Link } from "react-router-dom";
 const Section = ({ category }) => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.movieApp);
   useEffect(() => {
     if (loading === "idle") {
-      dispatch(popMovieDet());
+      dispatch(
+        popMovieDet(
+          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+        )
+      );
     }
   }, [loading, dispatch]);
 
@@ -25,7 +30,7 @@ const Section = ({ category }) => {
   } else if (loading === "success") {
     // Sort the posts by id in descending order
     const sortedPosts = sliceArray(data.results, 0, 5);
-
+    console.log("section", sliceArray(data.results, 0, 5));
     // Map through the sorted posts and display them
     bodyContent = sortedPosts.map((item) => (
       <MovieCard
@@ -34,12 +39,14 @@ const Section = ({ category }) => {
         original_title={item.original_title}
         overview={item.overview}
         vote_average={item.vote_average}
+        id={item.id}
       />
     ));
   } else {
     // Display the error message
     bodyContent = <div>{error}</div>;
   }
+
   return (
     <section>
       <div className="section1">
@@ -49,9 +56,9 @@ const Section = ({ category }) => {
             <AiOutlineDoubleRight />
           </div>
           <div className="box-one right">
-            <a href="#">
+            <Link to="/movies">
               View More <AiOutlineDoubleRight />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="card-wrapper">{bodyContent}</div>

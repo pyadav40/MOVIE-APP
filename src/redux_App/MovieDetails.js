@@ -2,12 +2,15 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 //create async thunk
-export const popMovieDet = createAsyncThunk("popular", async (url) => {
+export const getMovieDetails = createAsyncThunk("movieDetails", async (id) => {
   const btoken =
     "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZjNjZDk4NjllZDRkMmM2ZjM2YWEwZTdkNDg1YjVmMyIsInN1YiI6IjY0ZTAzN2FhMzcxMDk3MDBlMjI5NzczNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BGWeWXQfn91oQ7a4jYLZM3AoeB9ktgDcbZ12vkHoSxk";
   const headers = { Authorization: `Bearer ${btoken}` };
   try {
-    const response = await axios.get(url, { headers });
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}`,
+      { headers }
+    );
     const data1 = await response.data;
 
     return data1;
@@ -17,22 +20,22 @@ export const popMovieDet = createAsyncThunk("popular", async (url) => {
   }
 });
 
-const popMovies = createSlice({
-  name: "popMovies",
-  initialState: { data: [], loading: "idle", error: null },
+const movieDetails = createSlice({
+  name: "movieDetails",
+  initialState: { moviedata: [], loading: "idle", error: null },
   extraReducers: {
-    [popMovieDet.pending]: (state) => {
+    [getMovieDetails.pending]: (state) => {
       state.loading = "pending";
     },
-    [popMovieDet.fulfilled]: (state, action) => {
+    [getMovieDetails.fulfilled]: (state, action) => {
       state.loading = "success";
-      state.data = action.payload;
+      state.moviedata = action.payload;
     },
-    [popMovieDet.rejected]: (state, action) => {
+    [getMovieDetails.rejected]: (state, action) => {
       state.loading = "failed";
       state.error = action.payload;
     },
   },
 });
 
-export default popMovies.reducer;
+export default movieDetails.reducer;
