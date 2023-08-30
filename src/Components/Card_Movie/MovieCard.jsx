@@ -7,9 +7,10 @@ const MovieCard = ({
   original_title,
   vote_average,
   id,
+  category_ms,
 }) => {
   return (
-    <Link to={`/movies/${id}`}>
+    <Link to={`/${category_ms}/${id}`}>
       <div
         className="card-container"
         style={{
@@ -19,7 +20,7 @@ const MovieCard = ({
         <div className="rat-heart">
           <div className="rating">
             <AiFillStar />
-            <span>{vote_average}</span>
+            <span>{vote_average?.toFixed(2)}</span>
           </div>
           <AiTwotoneHeart className="heart-icon" />
         </div>

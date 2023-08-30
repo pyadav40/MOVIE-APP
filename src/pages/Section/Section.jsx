@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import MovieCard from "../../Components/Card_Movie/MovieCard";
+import Loader from "../../Components/Loader/Loader";
 import { popMovieDet } from "../../redux_App/popularmovie.js";
 import { sliceArray } from "../../utility/sliceArray";
 import { AiOutlineDoubleRight } from "react-icons/ai";
@@ -22,14 +23,10 @@ const Section = ({ category }) => {
   let bodyContent;
 
   if (loading === "pending") {
-    bodyContent = (
-      <div className="loader">
-        <h1>Loading</h1>
-      </div>
-    );
+    bodyContent = <Loader />;
   } else if (loading === "success") {
     // Sort the posts by id in descending order
-    const sortedPosts = sliceArray(data.results, 0, 5);
+    const sortedPosts = sliceArray(data.results, 5, 10);
     console.log("section", sliceArray(data.results, 0, 5));
     // Map through the sorted posts and display them
     bodyContent = sortedPosts.map((item) => (
@@ -40,6 +37,7 @@ const Section = ({ category }) => {
         overview={item.overview}
         vote_average={item.vote_average}
         id={item.id}
+        category_ms="movies"
       />
     ));
   } else {
@@ -56,7 +54,7 @@ const Section = ({ category }) => {
             <AiOutlineDoubleRight />
           </div>
           <div className="box-one right">
-            <Link to="/movies">
+            <Link to="/movie">
               View More <AiOutlineDoubleRight />
             </Link>
           </div>

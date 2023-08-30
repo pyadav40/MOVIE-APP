@@ -2,7 +2,9 @@ $primary-color: #2c302e;
 $olive-green: #09b041;
 $pink: #f81c36;
 $font-size-icon: 1.8rem;
-
+a {
+  text-decoration: none;
+}
 .footer-logo {
   width: 200px;
   height: 50px;
@@ -24,4 +26,7 @@ $font-size-icon: 1.8rem;
     font-size: 1.5rem;
     letter-spacing: 0.1em;
   }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
 }

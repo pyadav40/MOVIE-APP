@@ -13,3 +13,7 @@ export const findGenres = (arr) => {
   }
   return joinArr.join(", ");
 };
+
+export const pageArray = (pages) => {
+  return Array.from({ length: pages }, (_, i) => i + 1);
+};

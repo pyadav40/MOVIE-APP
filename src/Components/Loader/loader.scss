@@ -1,0 +1,31 @@
+$olive-green: #09b041;
+$orange: #f2af29;
+$purle: #950952;
+
+.loader-wrapper {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-bottom-color: $purle;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -3,8 +3,7 @@ import axios from "axios";
 
 //create async thunk
 export const popMovieDet = createAsyncThunk("popular", async (url) => {
-  const btoken =
-    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZjNjZDk4NjllZDRkMmM2ZjM2YWEwZTdkNDg1YjVmMyIsInN1YiI6IjY0ZTAzN2FhMzcxMDk3MDBlMjI5NzczNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BGWeWXQfn91oQ7a4jYLZM3AoeB9ktgDcbZ12vkHoSxk";
+  const btoken = import.meta.env.VITE_APP_BTOKEN;
   const headers = { Authorization: `Bearer ${btoken}` };
   try {
     const response = await axios.get(url, { headers });
@@ -33,6 +32,12 @@ const popMovies = createSlice({
       state.error = action.payload;
     },
   },
+  reducers: {
+    reset: (state) => {
+      state.loading = "idle";
+      state.data = [];
+    },
+  },
 });
-
+export const { reset } = popMovies.actions;
 export default popMovies.reducer;

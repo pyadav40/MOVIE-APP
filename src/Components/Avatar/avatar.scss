@@ -1,0 +1,33 @@
+$primary-color: #04151f;
+$olive-green: #09b041;
+$orange: #f2af29;
+$purle: #950952;
+.avatar-container {
+  margin: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  color: white;
+  .img-avatar {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid green;
+    img {
+      max-width: 160px; /* Limit the width of the image */
+      height: auto; /* Maintain the aspect ratio */
+    }
+  }
+  p {
+    margin-top: 0.7rem;
+  }
+}

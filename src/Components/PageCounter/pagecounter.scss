@@ -1,0 +1,27 @@
+$primary-color: #04151f;
+$olive-green: #09b041;
+$orange: #f2af29;
+$purle: #950952;
+.btn-cont {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin: 1.5rem auto;
+  justify-content: center;
+  align-items: center;
+  .btn-icon {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      font-size: 2rem;
+      color: $purle;
+    }
+  }
+}

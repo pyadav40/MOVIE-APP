@@ -16,12 +16,15 @@ const Navbar = () => {
               setDrawer(true);
             }}
           />
-          <Logo />
+          <div className="hide-logo">
+            <Logo />
+          </div>
         </div>
         <div className="search">
           <div className="search-container">
-            <IoSearch className="search-icon" />
-            <input type="text" placeholder="search" />
+            <Link to="/search">
+              <IoSearch className="search-icon" />
+            </Link>
           </div>
         </div>
       </div>

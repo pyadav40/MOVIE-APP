@@ -1,0 +1,40 @@
+$placeholder-col: #05040f;
+$olive-green: #09b041;
+.search_container {
+  width: 90vw;
+  min-height: 50vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .search_input {
+    margin-top: 2rem;
+    width: 70%;
+    height: 50px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 800;
+    outline: none;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid green;
+    margin-bottom: 2rem;
+
+    &::placeholder {
+      font-size: 2rem;
+    }
+  }
+  .search-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.loading {
+  width: 200px;
+  height: 200px;
+  border: 10px solid green;
+  border-radius: 50%;
+}

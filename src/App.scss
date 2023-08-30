@@ -1,6 +1,6 @@
-$primary-color: #01010f;
-
+$primary-color: #04151f;
 $olive-green: #09b041;
+$purle: #950952;
 $orange: #7c5800;
 
 @font-face {
@@ -21,6 +21,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden !important;
+  font-family: "Poppins";
   background-color: $primary-color !important;
 }
 

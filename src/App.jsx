@@ -2,9 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.scss";
 import MovieDetailCard from "./pages/MovieCard/MovieDetailCard";
+import SeriesDetailCard from "./pages/SeriesDetailCard/SeriesDetailCard";
 import Movie from "./pages/Movie/Movie";
 import Home from "./pages/Home/Home";
 import Footer from "./pages/Footer/Footer";
+import Search from "./pages/Search/Search";
+import Contact from "./pages/Contact/Contact";
 function App() {
   return (
     <>
@@ -18,9 +21,16 @@ function App() {
             element={<MovieDetailCard />}
             key={location.key}
           />
+          <Route
+            path="/series/:id"
+            element={<SeriesDetailCard />}
+            key={location.key}
+          />
+          <Route path="/search" element={<Search />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

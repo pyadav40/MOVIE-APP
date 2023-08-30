@@ -1,6 +1,7 @@
-$primary-color: #2c302e;
+$primary-color: #04151f;
 $olive-green: #09b041;
-$orange: #7c5800;
+$orange: #f2af29;
+$purle: #950952;
 $font-size-icon: 1.8rem;
 $marginValue: 150px;
 .image {
@@ -10,8 +11,8 @@ $marginValue: 150px;
   width: 100vw;
   max-height: 100vh;
   z-index: -55555;
-  object-fit: cover;
-  opacity: 0.5;
+  // object-fit: cover;
+  opacity: 0.3;
 }
 .home-banner {
   z-index: 1111;
@@ -46,7 +47,7 @@ $marginValue: 150px;
     display: flex;
     width: 250px;
     height: 100px;
-    margin: 2rem 0rem;
+    margin: 1rem 0rem;
     font-size: 1.5rem;
     text-align: center;
     justify-content: center;
@@ -66,6 +67,106 @@ $marginValue: 150px;
   margin-top: 3rem;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .home-banner {
+    z-index: 1111;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+  }
+  .home-img_poster {
+    width: 30%;
+    max-height: 30vh;
+    margin-bottom: 1rem;
+  }
+  .home-details {
+    width: 60%;
+    max-height: 30vh;
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      display: none;
+    }
+
+    .video-tab {
+      width: 150px;
+      height: 70px;
+      margin: 1rem 0rem;
+      font-size: 1rem;
+      border: 2px solid #19a40e;
+      border-radius: 1rem;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #19a40e;
+      }
+      span {
+        margin-left: 0.6rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
+    z-index: -55555;
+    // object-fit: cover;
+    opacity: 0.3;
+  }
+  .home-banner {
+    z-index: 1111;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+  }
+  .home-img_poster {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+  .home-details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    max-height: 30vh;
+    align-items: center;
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      display: none;
+    }
+
+    .video-tab {
+      width: 150px;
+      height: 70px;
+      margin: 1rem 0rem;
+      font-size: 1rem;
+      border: 2px solid #19a40e;
+      border-radius: 1rem;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #19a40e;
+      }
+      span {
+        margin-left: 0.6rem;
+      }
+    }
+  }
+}
 /* --------------------------********************************-----------------------------
                                     Section 1
   -----------------------------********************************----------------------------------*/

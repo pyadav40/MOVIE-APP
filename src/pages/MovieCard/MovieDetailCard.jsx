@@ -4,6 +4,7 @@ import { getMovieDetails } from "../../redux_App/MovieDetails";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../../Components/Loader/Loader";
 import "./MovieDetailCard.scss";
 import Cast from "./Cast";
 const MovieDetailCard = () => {
@@ -22,17 +23,14 @@ const MovieDetailCard = () => {
   let bodyContent;
 
   if (loading === "pending") {
-    bodyContent = (
-      <div className="loader">
-        <h1>Loading</h1>
-      </div>
-    );
+    bodyContent = <Loader />;
   } else if (loading === "success") {
     // Sort the posts by id in descending  order
     console.log("movies", moviedata);
     const { genres } = moviedata;
     const gen = findGenres(genres);
     const titleArray = moviedata.title.split(":");
+    const relDate = moviedata.release_date.slice(0, 4);
     let titleBody;
     if (titleArray.length <= 1) {
       titleBody = <span>{moviedata.title}</span>;
@@ -60,7 +58,7 @@ const MovieDetailCard = () => {
           </div>
           <div className="detail-movie_lang">
             <div className="lang_title">
-              <h4>2024</h4>
+              <h4>{relDate}</h4>
             </div>
             <div className="top_vote">
               <div className="vote-icon">

@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { fetchAPI } from "../../utility/fetchAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { getBannerMovies } from "../../redux_App/BannerMovie";
 import { sliceArray, randomElement } from "../../utility/sliceArray";
 import { AiFillStar, AiFillYoutube } from "react-icons/ai";
 import "./home.scss";
 import Section from "../Section/Section";
+import Loader from "../../Components/Loader/Loader";
+import TvSection from "../Tv_Section/TvSection";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,28 +19,23 @@ const Home = () => {
 
   let HomeContent;
   if (loading === "pending") {
-    HomeContent = (
-      <div className="loader">
-        <h1>Loading</h1>
-      </div>
-    );
+    HomeContent = <Loader />;
   } else if (loading === "success") {
     // Sort the posts by id in descending order
-
-    let sortedArr = randomElement(sliceArray(data.results, 0, 5));
-    console.log("home", sliceArray(data.results, 0, 5));
+    console.log("home", data.results);
+    let sortedArr = randomElement(sliceArray(data.results, 0, 10));
     // Map through the sorted posts and display them
     HomeContent = (
       <>
         <img
           className="image"
-          src={`https://image.tmdb.org/t/p/original/${sortedArr.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original/${sortedArr.backdrop_path}`}
         />
         <div className="home-banner margin-Top">
           <div
             className="home-img_poster"
             style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/original/${sortedArr.poster_path})`,
+              backgroundImage: `url(https://image.tmdb.org/t/p/w342/${sortedArr.poster_path})`,
             }}
           ></div>
           <div className="home-details">
@@ -69,8 +65,10 @@ const Home = () => {
   return (
     <>
       <main>{HomeContent}</main>
+
       <Section category="Popular" />
       <hr />
+      <TvSection category="Series" />
     </>
   );
 };

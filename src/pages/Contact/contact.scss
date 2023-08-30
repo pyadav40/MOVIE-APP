@@ -1,0 +1,96 @@
+$primary-color: #04151f;
+$olive-green: #09b041;
+$orange: #f2af29;
+$purle: #950952;
+$font-size-icon: 1.8rem;
+
+.contact-container {
+  width: 95vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  .contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+  .purple {
+    background-color: $purle;
+  }
+  .white {
+    background-color: white;
+  }
+
+  .uneven {
+    --mask: radial-gradient(30px at left, #0000 97%, #000) 50%/ 100% 55.5px;
+    mask: var(--mask);
+  }
+  .contact-details {
+    flex-direction: column;
+    display: flex;
+    width: 80%;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  .ico-contact {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-heading {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .contact-source {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .source-first {
+      display: flex;
+
+      width: 50%;
+      height: auto;
+      .col-blue {
+        color: #004182;
+      }
+      span {
+        margin: 1rem;
+      }
+    }
+    .source-second {
+      display: flex;
+      width: 50%;
+      height: auto;
+      .col-blue {
+        color: #004182;
+      }
+      .col-white {
+        color: #ffffff;
+      }
+      .col-green {
+        color: $olive-green;
+      }
+      span {
+        margin: 0.5rem;
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+}

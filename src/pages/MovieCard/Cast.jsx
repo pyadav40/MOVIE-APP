@@ -4,27 +4,11 @@ import { useParams } from "react-router-dom";
 import { getCast } from "../../redux_App/CastMovie";
 import { useDispatch, useSelector } from "react-redux";
 import { sliceArray } from "../../utility/sliceArray";
-
-const Avatar = ({ img_avatar, cast_name }) => {
-  console.log("avtar comp", img_avatar, cast_name);
-  return (
-    <>
-      <div className="avatar-container">
-        <div className="img-avatar">
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${img_avatar}`}
-            alt="avatar"
-          />
-        </div>
-        <p>{cast_name}</p>
-      </div>
-    </>
-  );
-};
+import Avatar from "../../Components/Avatar/Avatar";
+import Loader from "../../Components/Loader/Loader";
 
 const Cast = () => {
   const { id } = useParams();
-
   const dispatch = useDispatch();
   const { castdata, cast_loading, error } = useSelector(
     (state) => state.castDetails
@@ -37,11 +21,7 @@ const Cast = () => {
   let castContent;
 
   if (cast_loading === "pending") {
-    castContent = (
-      <div className="loader">
-        <h1>Loading</h1>
-      </div>
-    );
+    castContent = <Loader />;
   } else if (cast_loading === "success") {
     const arrSorted = sliceArray(castdata.cast, 0, 6);
 

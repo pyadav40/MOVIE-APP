@@ -1,11 +1,19 @@
-$primary-color: #2c302e;
+$primary-color: #04151f;
 $olive-green: #09b041;
-$orange: #7c5800;
+$orange: #f2af29;
+$purle: #950952;
 $font-size-icon: 1.8rem;
+
+@font-face {
+  font-family: "Poppins-Light";
+  src: local("Poppins-Light"),
+    url("../../assets/font/Poppins-Light.ttf") format("truetype");
+}
 
 .card-container {
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: "Poppins-Light";
   cursor: pointer;
   position: relative;
   width: 220px;

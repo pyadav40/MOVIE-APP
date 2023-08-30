@@ -20,3 +20,10 @@ https://image.tmdb.org/t/p/w342/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
 https://image.tmdb.org/t/p/w500/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
 https://image.tmdb.org/t/p/w780/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
 https://image.tmdb.org/t/p/original/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+
+}

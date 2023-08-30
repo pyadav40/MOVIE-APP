@@ -1,44 +1,47 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { popMovieDet } from "../../redux_App/popularmovie.js";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+
+import MovieCard from "../../Components/Card_Movie/MovieCard.jsx";
+import PageCounter from "../../Components/PageCounter/PageCounter.jsx";
 import "./movie.scss";
+import Loader from "../../Components/Loader/Loader.jsx";
 const Movie = () => {
-  const [page, setPage] = useState(1);
+  const [countPage, setcountPage] = useState(1);
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.movieApp);
-  const handleClick = (e) => {
-    const pageNum = parseInt(e.target.value);
-    setPage(pageNum);
-  };
-
+  console.log("moviePage", countPage);
   useEffect(() => {
     dispatch(
       popMovieDet(
-        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`
+        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${countPage}`
       )
     );
-  }, [page]);
+  }, [countPage, dispatch]);
   let movieContent;
   if (loading === "pending") {
-    movieContent = <div>Loading..........</div>;
+    movieContent = <Loader />;
   } else if (loading === "success") {
     console.log("pages", data);
+
     movieContent = (
-      <div>
-        <button onClick={handleClick} value="1">
-          1
-        </button>
-        <button onClick={handleClick} value="2">
-          2
-        </button>
-        <button onClick={handleClick} value="3">
-          3
-        </button>
-        <button onClick={handleClick} value="4">
-          4
-        </button>
-      </div>
+      <>
+        <MemoizedPageCounter setcountPage={setcountPage} />
+        <div className="search-card-wrapper">
+          {data.results.map((item) => (
+            <MovieCard
+              key={item.id}
+              poster_path={item.poster_path}
+              overview={item.overview}
+              original_title={item.title}
+              vote_average={item.vote_average}
+              id={item.id}
+              category_ms="movies"
+            />
+          ))}
+        </div>
+        <MemoizedPageCounter setcountPage={setcountPage} />
+      </>
     );
   } else {
     movieContent = <div>{error}</div>;
@@ -46,5 +49,6 @@ const Movie = () => {
 
   return <>{movieContent}</>;
 };
+const MemoizedPageCounter = React.memo(PageCounter);
 
 export default Movie;

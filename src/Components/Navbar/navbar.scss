@@ -1,12 +1,15 @@
-$primary-color: #2c302e;
+$primary-color: #04151f;
 $olive-green: #09b041;
-$orange: #7c5800;
+$orange: #f2af29;
+$purle: #950952;
 $font-size-icon: 1.8rem;
 
 .container {
   width: 100%;
   max-height: 30vh;
+
   background: rgba(12, 10, 17, 0.39);
+
   position: sticky;
   top: 1rem;
   border-radius: 12px;
@@ -25,6 +28,9 @@ $font-size-icon: 1.8rem;
       width: 30%;
       cursor: pointer;
       font-size: $font-size-icon;
+      .hide-logo {
+        display: block;
+      }
     }
     .search {
       width: 70%;
@@ -33,31 +39,20 @@ $font-size-icon: 1.8rem;
       align-items: center;
       .search-container {
         display: flex;
-
         align-items: center;
-        width: 40%;
         height: 40px;
-        border-bottom: 1px solid wheat;
+        a {
+          color: white;
+        }
+        &:hover .search-icon {
+          font-size: ($font-size-icon * 2);
+          color: $olive-green;
+        }
       }
       .search-icon {
         font-size: $font-size-icon;
         margin-right: 10px;
-      }
-      input {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        width: 28%;
-        height: 30px;
-        font-size: 20px;
-        color: white;
-        &::placeholder {
-          font-size: 20px;
-          font-family: "poppins", sans-serif;
-          font-weight: 100;
-          font-style: normal;
-          color: white;
-        }
+        transition: all 0.3s ease-in-out;
       }
     }
   }
@@ -68,8 +63,13 @@ $font-size-icon: 1.8rem;
     top: 0;
     width: 20vw;
     height: 100vh;
-    background-color: $primary-color;
-    border-right: 3px solid $olive-green;
+    background: linear-gradient(
+        101deg,
+        rgba(9, 1, 47, 0.8939950980392157) 38%,
+        rgba(4, 21, 31, 0.43461134453781514) 100%
+      ),
+      url("../../assets/Simple\ Shiny.svg");
+
     transition: left 0.5s linear;
     z-index: 100;
     border-radius: 2rem;
@@ -104,12 +104,18 @@ $font-size-icon: 1.8rem;
     margin: 20px 10px 0px 0px;
     color: white;
     .cl-icon {
-      border: 2px solid $olive-green;
+      border: 2px solid $orange;
       border-radius: 20px;
     }
   }
   .menu-inv {
-    background-color: $primary-color;
+    background: linear-gradient(
+        101deg,
+        rgba(9, 1, 47, 0.8939950980392157) 38%,
+        rgba(4, 21, 31, 0.43461134453781514) 100%
+      ),
+      url("../../assets/Simple\ Shiny.svg");
+
     left: -25vw;
     top: 0;
     position: fixed;
@@ -119,5 +125,83 @@ $font-size-icon: 1.8rem;
     transition: left 0.5s ease-out;
 
     z-index: 100;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .container {
+    .logo {
+      display: flex;
+      flex-direction: row;
+      color: white;
+      h1 {
+        font-size: 1rem;
+      }
+      .hamberger {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        cursor: pointer;
+        font-size: $font-size-icon;
+        .hide-logo {
+          display: block;
+        }
+      }
+    }
+    .menu {
+      width: 30vw;
+    }
+    ul {
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .close {
+      font-size: 1.5rem;
+    }
+    .menu-inv {
+      left: -30vw;
+      top: 0;
+      position: fixed;
+      border-radius: 2rem;
+      width: 30vw;
+      height: 100vh;
+      transition: left 0.5s ease-out;
+
+      z-index: 100;
+    }
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .container {
+    .logo {
+      .hamberger {
+        .hide-logo {
+          display: none;
+        }
+      }
+    }
+    .menu {
+      width: 60vw;
+    }
+    ul {
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .close {
+      font-size: 1.2rem;
+    }
+    .menu-inv {
+      left: -60vw;
+      top: 0;
+      position: fixed;
+      border-radius: 2rem;
+      width: 60vw;
+      height: 100vh;
+      transition: left 0.5s ease-out;
+      z-index: 100;
+    }
   }
 }
