@@ -34,7 +34,11 @@ $pink: #f81c36;
         list-style-type: none;
         margin-bottom: 1rem;
         margin-top: 1rem;
+        a {
+          color: #ffffff;
+        }
       }
+
       p {
         margin-bottom: 1rem;
       }
@@ -105,6 +109,7 @@ $pink: #f81c36;
         align-items: center;
         margin: 1rem 0rem;
         justify-content: center;
+        word-wrap: break-word;
 
         ul li {
           list-style-type: none;

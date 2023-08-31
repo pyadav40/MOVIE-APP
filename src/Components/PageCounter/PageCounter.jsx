@@ -4,7 +4,7 @@ import genArray from "../../utility/genArray";
 import Button from "../Button/Button";
 import "./pagecounter.scss";
 
-const PageCounter = ({ setcountPage }) => {
+const PageCounter = () => {
   const [btnForEnable, setBtnForEnable] = useState(false);
   const [btnRevEnable, setBtnRevEnable] = useState(false);
   const [num, setNum] = useState(0);
@@ -44,7 +44,7 @@ const PageCounter = ({ setcountPage }) => {
       </button>
 
       {page.map((item, i) => (
-        <Button key={i} setInput={setcountPage} value={item} />
+        <Button key={i} value={item} />
       ))}
       <button
         disabled={btnForEnable}

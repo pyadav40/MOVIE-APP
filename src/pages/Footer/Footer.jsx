@@ -1,4 +1,5 @@
 import Logo from "../../Components/Logo/Logo";
+import { Link } from "react-router-dom";
 import "./footer.scss";
 const Footer = () => {
   return (
@@ -19,7 +20,9 @@ const Footer = () => {
                 <h3>Resources</h3>
               </li>
               <li>About Flexpicss</li>
-              <li>Contact US</li>
+              <li>
+                <Link to="/contact">Contact US</Link>
+              </li>
             </ul>
           </div>
           <div className="box">
@@ -40,7 +43,7 @@ const Footer = () => {
             <p>
               Subscribe to our newsletter system now to get latest news from us
             </p>
-            <input type="string" name="" />
+            <input type="string" disabled />
             <h5>Subscribe Now</h5>
           </div>
         </div>

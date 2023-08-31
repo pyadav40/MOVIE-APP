@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie" element={<Movie />} />
+          <Route path="/movie/:pageChange" element={<Movie />} />
           <Route
             path="/movies/:id"
             element={<MovieDetailCard />}

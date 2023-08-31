@@ -54,7 +54,7 @@ const Section = ({ category }) => {
             <AiOutlineDoubleRight />
           </div>
           <div className="box-one right">
-            <Link to="/movie">
+            <Link to="/movie/1">
               View More <AiOutlineDoubleRight />
             </Link>
           </div>
