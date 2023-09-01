@@ -1,29 +1,36 @@
-# React + Vite
+<h1>FlexPicss Movie App</h1><hr>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+👉 [FlexPicss](https://movie-app-gules-eta.vercel.app/)
 
-Currently, two official plugins are available:
+<hr>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Original is the biggest picture.
-If you want smaller sizes, you can use the parameters in the table below.
-For example:
-https://image.tmdb.org/t/p/w780/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg
-https://image.tmdb.org/t/p/w300/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg
-or with a poster
-https://image.tmdb.org/t/p/w92/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
-https://image.tmdb.org/t/p/w154/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
-https://image.tmdb.org/t/p/w185/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
-https://image.tmdb.org/t/p/w342/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
-https://image.tmdb.org/t/p/w500/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
-https://image.tmdb.org/t/p/w780/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
-https://image.tmdb.org/t/p/original/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg
+![image](https://github.com/pyadav40/MOVIE-APP/assets/109465963/68f24bb2-8f34-4f7d-9893-770eeba0d337)
 
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+<hr>
+<h1>Navigation</h1>
 
-}
-@media screen and (min-width: 300px) and (max-width: 600px) {
+✨ Home Page
 
-}
+✨ Movie/Series Details
+
+✨ Search Movie
+
+✨ View More Movie Pages
+
+✨ View Series (--delpoy Soon---)
+
+✨ Contact
+
+<hr>
+<h1>Tech Stack</h1>
+
+✅ React-Router-DOM
+
+✅ React-Icon
+
+✅ React-Redux-Toolkit (RTK)
+
+✅ Async-Thunk
+
+✅ SCSS/SASS

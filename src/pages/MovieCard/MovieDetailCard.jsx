@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../Components/Loader/Loader";
 import "./MovieDetailCard.scss";
 import Cast from "./Cast";
+import VideoPlayer from "../../Components/Videoplayer/VideoPlayer";
 const MovieDetailCard = () => {
   const { id } = useParams();
   console.log("id", id);
@@ -16,7 +17,6 @@ const MovieDetailCard = () => {
   );
 
   useEffect(() => {
-    console.log("id", id);
     dispatch(getMovieDetails(id));
   }, [id]);
 
@@ -71,6 +71,7 @@ const MovieDetailCard = () => {
 
         <div className="container-detail-bottom">
           <div className="detail-movie_title">
+            <VideoPlayer id={moviedata.id} />
             <p>{moviedata.overview}</p>
           </div>
         </div>

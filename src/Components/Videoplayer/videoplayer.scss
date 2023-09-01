@@ -1,0 +1,55 @@
+$primary-color: #04151f;
+$olive-green: #09b041;
+$orange: #f2af29;
+$purle: #950952;
+$red: #b70404;
+$font-size-icon: 1.8rem;
+
+.video-tab {
+  cursor: pointer;
+  display: flex;
+  width: 200px;
+  height: 57px;
+  margin: 1rem 0rem;
+  font-size: 1rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #19a40e;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #19a40e;
+  }
+  span {
+    margin-left: 0.6rem;
+  }
+}
+
+.player {
+  z-index: 999999999;
+  position: absolute;
+  top: -3rem;
+  left: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60vw;
+  background: rgba(4, 21, 31, 0.85);
+  .close {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 20px 10px 0px 0px;
+    color: white;
+    right: 20rem;
+    top: 8rem;
+    position: absolute;
+    .cl-icon {
+      border: 2px solid $red;
+      border-radius: 20px;
+    }
+  }
+}

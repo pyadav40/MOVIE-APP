@@ -92,21 +92,21 @@ $marginValue: 150px;
       display: none;
     }
 
-    .video-tab {
-      width: 150px;
-      height: 70px;
-      margin: 1rem 0rem;
-      font-size: 1rem;
-      border: 2px solid #19a40e;
-      border-radius: 1rem;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        background-color: #19a40e;
-      }
-      span {
-        margin-left: 0.6rem;
-      }
-    }
+    // .video-tab {
+    //   width: 150px;
+    //   height: 70px;
+    //   margin: 1rem 0rem;
+    //   font-size: 1rem;
+    //   border: 2px solid #19a40e;
+    //   border-radius: 1rem;
+    //   transition: all 0.3s ease-in-out;
+    //   &:hover {
+    //     background-color: #19a40e;
+    //   }
+    //   span {
+    //     margin-left: 0.6rem;
+    //   }
+    // }
   }
 }
 @media only screen and (min-width: 300px) and (max-width: 600px) {

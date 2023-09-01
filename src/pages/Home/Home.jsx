@@ -7,7 +7,7 @@ import "./home.scss";
 import Section from "../Section/Section";
 import Loader from "../../Components/Loader/Loader";
 import TvSection from "../Tv_Section/TvSection";
-
+import VideoPlayer from "../../Components/Videoplayer/VideoPlayer";
 const Home = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.homePage);
@@ -44,11 +44,7 @@ const Home = () => {
             &nbsp;&nbsp;&nbsp;
             <AiFillStar />
             <span> 8.15</span>
-            <div className="video-tab" role="button">
-              <AiFillYoutube />
-
-              <span>Watch Trailer</span>
-            </div>
+            <VideoPlayer id={sortedArr.id} />
             <p>
               <i>{sortedArr.overview}</i>
             </p>
